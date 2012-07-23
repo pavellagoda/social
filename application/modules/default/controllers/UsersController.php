@@ -27,13 +27,9 @@ class UsersController extends modules_default_controllers_ControllerBase
         $model = new Model_Users();
         $users = $model->getRegistaredUser(App_User::getLoggedUserId());
         $this->view->users = $users;
-        $this->view->headScript()->appendFile('/scripts/jquery.ui.core.js');
-        $this->view->headScript()->appendFile('/scripts/jquery.ui.dialog.js');
-        $this->view->headScript()->appendFile('/scripts/jquery.ui.mouse.js');
-        $this->view->headScript()->appendFile('/scripts/jquery.ui.position.js');
-        $this->view->headScript()->appendFile('/scripts/jquery.ui.widget.js');
-        $this->view->headScript()->appendFile('/scripts/jquery.form.js');
         $this->view->headScript()->appendFile('/scripts/messages.js');
+        $this->view->headScript()->appendFile('/scripts/jquery.form.js');
+        $this->view->headScript()->appendFile('/bootstrap/js/bootstrap-modal.js');
     }
 
 }

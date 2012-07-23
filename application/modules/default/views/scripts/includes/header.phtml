@@ -1,13 +1,18 @@
 
 <div class="header_left"></div>
 <div class="header_right">
-
-    <?php echo $this->navigation()
-	    				                ->menu()
-	    				                ->setMinDepth(0)
-	        				            ->setMaxDepth(0)
-	        				            ->render($this->mainNavigation);
-	    	            ?>
-    <div class="clear"></div>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <?php
+            echo $this->navigation()
+                    ->menu()
+                    ->setUlClass('pull-right nav')
+                    ->setMinDepth(0)
+                    ->setMaxDepth(0)
+                    ->render($this->mainNavigation);
+            ?>
+            <div class="clear"></div>
+        </div>
+    </div>
 </div>
 <div class="clear"></div>

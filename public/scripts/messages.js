@@ -1,12 +1,13 @@
 $(function(){
-	$('#dialog').dialog({autoOpen:false});
+	$('#dialog').modal({show:false});
         $('.send-message a').click(function(){
-            $('#dialog').dialog('open');
+            console.log($('#dialog'))
+            $('#dialog').modal('show');
             $('#dialog .username').html($(this).parent().prev('.username').html())
             $('#dialog').find('input[name="recepient"]').val($(this).attr('user'))
-            $('#dialog form button').click(function(){
+            $('#dialog .modal-footer a').click(function(){
                 $('#dialog form').ajaxSubmit(function(data){
-                    $('#dialog').dialog('close');
+                    $('#dialog').modal('hide');
                     alert(data)
                 });
                 return false;

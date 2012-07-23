@@ -10,21 +10,25 @@
 
     </head>
     <body>
-        <div class="content">
+        <div class="container">
             <div class="header">
                 <?php echo $this->render("includes/header.phtml"); ?>
             </div>
+
             <?php if ($this->loggedUser): ?>
-                <div class="messages">
-                    <a href="/messages">Messages<?php if($this->unreadedMessages) echo '('.$this->unreadedMessages.')'?></a>
+                <div class=" span2 left-menu">
+                    <a href="/messages">Messages<?php if ($this->unreadedMessages)
+                echo '(' . $this->unreadedMessages . ')' ?></a>
+                    <a href="/friends">Friends</a>
                 </div>
             <?php endif; ?>
-            <div class="container">
+
+            <div class="main-content span<?php echo $this->loggedUser?9:12 ?>">
                 <?php echo $this->layout()->messages; ?>
                 <?php echo $this->layout()->content; ?>
             </div>
-
-            <div class="footer">
+            <div class="clear"></div>
+            <div class="footer span12">
                 <?php echo $this->render("includes/footer.phtml"); ?>
             </div>
 

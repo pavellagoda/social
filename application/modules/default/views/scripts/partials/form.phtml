@@ -2,8 +2,13 @@
     <?php $elements = $this->form->getElements();
     foreach ($elements as $key => $element) : ?>
         <div class ="form-element">
-            <?php echo $this->partial('partials/form-element.phtml', 'default', array('element'=>$element)); ?>
+            <?php echo $this->partial('partials/form-element.phtml', 'default', array('element' => $element)); ?>
         </div>
         <div class="clear"></div>
-<?php endforeach; ?>
+    <?php endforeach; ?>
+    <div class="form-actions">
+        <button class="btn btn-primary" type="submit" name="yt0">
+            <i class="icon-ok icon-white"></i> Submit
+        </button>
+    </div>
 </form>

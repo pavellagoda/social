@@ -1,19 +1,36 @@
-<div>
-    <?php foreach ($this->users as $user): ?>
-        <div>
-            <div class="lineelement username"><?php echo $user['username'] ?></div>
-            <div class="lineelement send-message"><a user="<?php echo $user['id'] ?>" href="#">Send Message</a></div>
-            <div class="clear"></div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($this->users as $user): ?>
+            <tr>
+                <td class="username"><?php echo $user['username'] ?></td>
+                <td class="send-message span2"><a user="<?php echo $user['id'] ?>" href="#">Send Message</a></td>
+                <td class="clear"></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<section id="modals">
+    <div id="dialog" class="modal hide fade in">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h3>Message</h3>
         </div>
-    <?php endforeach; ?>
-</div>
-
-<div id="dialog">
-    <form action="/messages/send" method="post">
-        <div class="username"></div>
-        <input type="hidden" name="recepient" value="0"/>
-        <input type="hidden" name="sender" value="<?php echo $this->loggedUser->id ?>"/>
-        <textarea name="content"></textarea>
-        <button>Send</button>
-    </form>
-</div>
+        <div class="modal-body">
+            <form action="/messages/send" method="post">
+                <div class="username"></div>
+                <input type="hidden" name="recepient" value="0"/>
+                <input type="hidden" name="sender" value="<?php echo $this->loggedUser->id ?>"/>
+                <textarea rows="10" cols="50" name="content"></textarea>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-primary">Send message</a>
+        </div>
+    </div>
+</section>

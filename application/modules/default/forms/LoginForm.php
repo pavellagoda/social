@@ -1,17 +1,21 @@
 <?php
 
-class Form_LoginForm extends Zend_Form {
+class Form_LoginForm extends Form_BaseForm
+{
 
-    public function __construct($options=null) {
+    public function __construct($options=null)
+    {
         return parent::__construct($options);
     }
 
-    public function preValidation($data) {
+    public function preValidation($data)
+    {
 
         return $data;
     }
 
-    public function init() {
+    public function init()
+    {
         $this->setAttrib('class', 'login');
         $this->setMethod('post');
 
@@ -20,10 +24,7 @@ class Form_LoginForm extends Zend_Form {
 
         // user name
         $un = $this->createElement('text', 'UserName');
-        $un->removeDecorator('HtmlTag')
-                ->removeDecorator('Label')
-                ->removeDecorator('Errors')
-                ->setLabel('Login')
+        $un->setLabel('Login')
                 ->addFilter('StringTrim')
                 ->setRequired(true)
                 ->addValidators(array(
@@ -35,10 +36,7 @@ class Form_LoginForm extends Zend_Form {
 
         // password
         $pwd = $this->createElement('password', 'Password');
-        $pwd->removeDecorator('HtmlTag')
-                ->removeDecorator('Label')
-                ->removeDecorator('Errors')
-                ->setAttrib('maxlength', 30)
+        $pwd->setAttrib('maxlength', 30)
                 ->setLabel('Password')
                 ->addFilter('StringTrim')
                 ->setRequired(true)
@@ -48,6 +46,7 @@ class Form_LoginForm extends Zend_Form {
                         )))))
         ;
         $this->addElement($pwd);
+        $this->removeDecoratorsForAll();
     }
 
 }

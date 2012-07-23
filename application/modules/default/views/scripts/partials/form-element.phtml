@@ -1,5 +1,13 @@
-<label class="lineelement" for="<?php echo $this->element->getName() ?>"><?php echo $this->element->getLabel() ?></label>
-<div class="lineelement">
+<?php if ($this->element->getName() != 'submit'): ?>
+    <label class="<?php if ($this->element->isRequired())
+        echo 'required'; ?>" for="<?php echo $this->element->getName() ?>">
+               <?php echo $this->element->getLabel() ?>
+               <?php if ($this->element->isRequired()): ?>
+            <span class="required">*</span>
+        <?php endif; ?>
+    </label>
+<?php endif; ?>
+<div class="">
     <div><?php echo $this->element; ?></div>
     <?php
     $messages = $this->element->getMessages();
