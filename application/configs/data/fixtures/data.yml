@@ -1,0 +1,118 @@
+Model_FullTimeDevelopersStatuses:
+  Model_FullTimeDevelopersStatuses_1:
+    value: 'No, just give me the best developers'
+  Model_FullTimeDevelopersStatuses_2:
+    value: 'Yes, full-time is requirement'
+Model_ApplicationTypes:
+  Model_ApplicationTypes_1:
+    name: 'Mobile App'
+  Model_ApplicationTypes_2:
+    name: 'Web App'
+  Model_ApplicationTypes_3:
+    name: 'Desktop App'
+Model_ProjectDurations:
+  Model_ProjectDurations_1:
+    value: '1 to 2 weeks'
+  Model_ProjectDurations_2:
+    value: '3 to 4 weeks'
+  Model_ProjectDurations_3:
+    value: '1 to 2 monthes'
+  Model_ProjectDurations_4:
+    value: '2 to 4 monthes'
+Model_Users:
+  Model_Users_1:
+    username: pavel
+    email: pasha.lagoda@gmail.com
+    password: cfb9ae9f4604c754d0b9a18ea038d1b9
+    fullname: pavel
+    date: '2012-04-18 14:28:14'
+  Model_Users_2:
+    username: yevgen
+    email: plagoda@webdevs.com
+    password: 8d650ef2285482a233e87c057bca9781
+    fullname: yevgen
+    date: '2012-04-19 05:58:21'
+Model_MostImportantParameters:
+  Model_MostImportantParameters_1:
+    value: Quality
+  Model_MostImportantParameters_2:
+    value: Timeliness
+  Model_MostImportantParameters_3:
+    value: Features
+  Model_MostImportantParameters_4:
+    value: Price
+Model_LocalDevelopersStatuses:
+  Model_LocalDevelopersStatuses_1:
+    value: 'No, just give me the best developers'
+  Model_LocalDevelopersStatuses_2:
+    value: 'Local is prefered, but quality is first'
+  Model_LocalDevelopersStatuses_3:
+    value: 'Yes, must be a local without questions'
+Model_ProjectTypes:
+  Model_ProjectTypes_1:
+    application_type_id: '1'
+    value: iOs(iPhone/iPad)
+  Model_ProjectTypes_2:
+    application_type_id: '1'
+    value: Android
+  Model_ProjectTypes_3:
+    application_type_id: '1'
+    value: 'Windows Phone'
+  Model_ProjectTypes_4:
+    application_type_id: '1'
+    value: BlackBerry
+  Model_ProjectTypes_5:
+    application_type_id: '1'
+    value: 'Mobile Web'
+  Model_ProjectTypes_6:
+    application_type_id: '2'
+    value: 'Ruby on Rails'
+  Model_ProjectTypes_7:
+    application_type_id: '2'
+    value: Django
+  Model_ProjectTypes_8:
+    application_type_id: '2'
+    value: PHP
+  Model_ProjectTypes_9:
+    application_type_id: '2'
+    value: .NET
+  Model_ProjectTypes_10:
+    application_type_id: '2'
+    value: Other
+  Model_ProjectTypes_11:
+    application_type_id: '3'
+    value: Mac
+  Model_ProjectTypes_12:
+    application_type_id: '3'
+    value: Windows
+  Model_ProjectTypes_13:
+    application_type_id: '3'
+    value: Linux
+Model_EstimateBudgets:
+  Model_EstimateBudgets_1:
+    value: 'No sure, i need quote'
+  Model_EstimateBudgets_2:
+    value: 'As much as it case'
+  Model_EstimateBudgets_3:
+    value: '$5,000-$10,000'
+  Model_EstimateBudgets_4:
+    value: '$10,000-$20,000'
+  Model_EstimateBudgets_5:
+    value: '$20,000-$40,000'
+  Model_EstimateBudgets_6:
+    value: '$40,000-$60,000'
+  Model_EstimateBudgets_7:
+    value: '$60,000-$100,000'
+  Model_EstimateBudgets_8:
+    value: '$100,000-$150,000'
+  Model_EstimateBudgets_9:
+    value: '$150,000 and above'
+Model_ProjectStates:
+  Model_ProjectStates_1:
+    value: 'No code, just an idea'
+  Model_ProjectStates_2:
+    value: 'No code, minimal spec'
+  Model_ProjectStates_3:
+    value: 'No code, heavy spec'
+  Model_ProjectStates_4:
+    value: 'Existiing codebase'

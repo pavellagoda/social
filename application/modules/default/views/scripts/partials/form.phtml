@@ -1,0 +1,9 @@
+<form method="<?php echo $this->form->getMethod() ?>" action="<?php echo $this->form->getAction() ?>" id="submited-form">
+    <?php $elements = $this->form->getElements();
+    foreach ($elements as $key => $element) : ?>
+        <div class ="form-element">
+            <?php echo $this->partial('partials/form-element.phtml', 'default', array('element'=>$element)); ?>
+        </div>
+        <div class="clear"></div>
+<?php endforeach; ?>
+</form>

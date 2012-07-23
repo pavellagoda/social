@@ -1,0 +1,15 @@
+<label class="lineelement" for="<?php echo $this->element->getName() ?>"><?php echo $this->element->getLabel() ?></label>
+<div class="lineelement">
+    <div><?php echo $this->element; ?></div>
+    <?php
+    $messages = $this->element->getMessages();
+    if (count($messages)):
+        ?>
+        <div class="errors">
+            <?php foreach ($messages as $message): ?>
+                <p><?php echo $message ?></p>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+<div class="clear"></div>

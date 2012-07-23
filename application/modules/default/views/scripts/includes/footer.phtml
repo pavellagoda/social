@@ -1,0 +1,20 @@
+<div class="foot">
+    <div class="div_foot_right">
+        &nbsp;
+    </div>
+
+    <div class="div_foot_left">
+        <div class="foot_menu_box">
+            <?php
+            echo $this->navigation()
+                    ->menu()
+                    ->setMinDepth(0)
+                    ->setMaxDepth(0)
+                    ->render($this->additionalNavigation);
+            ?>
+            <div class="clear"></div>
+        </div>
+        <p>&copy; 2012 ArtSocialNetwork. All rights reserved.</p>
+    </div>
+    <div class="clear"></div>
+</div>

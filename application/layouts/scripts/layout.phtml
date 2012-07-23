@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <?php
+        echo $this->headMeta();
+        echo $this->headTitle();
+        echo $this->headLink();
+        echo $this->headScript();
+        ?>
+
+    </head>
+    <body>
+        <div class="content">
+            <div class="header">
+                <?php echo $this->render("includes/header.phtml"); ?>
+            </div>
+
+            <div class="container">
+                <?php echo $this->layout()->messages; ?>
+                <?php echo $this->layout()->content; ?>
+            </div>
+
+            <div class="footer">
+                <?php echo $this->render("includes/footer.phtml"); ?>
+            </div>
+
+        </div>
+    </body>
+</html>

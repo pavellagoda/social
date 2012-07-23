@@ -1,0 +1,7 @@
+/nbproject/
+/nbproject/*
+/public/tmp/
+/public/tmp/*
+error.log
+access.log
+

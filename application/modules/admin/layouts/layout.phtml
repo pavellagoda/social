@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?php
+//echo (isset($this->title)?'<title>'.$this->title.'</title>':'');
+echo $this->headTitle($this->siteName);
+
+echo $this->headLink();
+
+echo $this->headScript();
+echo $this->headMeta();
+
+ ?>
+ 
+</head>
+<body>
+	<div class="header">
+		<div class="container_12">
+			<div class="grid_2 logo">
+				<a href="/"><?php echo $this->siteName; ?></a>
+			</div>
+			<div class="grid_6 prefix_1">
+				<div class="usermenu">
+					<a href="/admin">Главная</a>
+				</div>
+			</div>
+			
+			<div class="grid_2 prefix_1">
+				<div class="usermenu">
+					<a href="/admin/logout">Выйти</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div>
+		<div class="container_12">
+			<div class="grid_12">
+				<?php echo $this->layout()->content;?>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

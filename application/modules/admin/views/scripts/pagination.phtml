@@ -1,0 +1,22 @@
+<?php if ($this->pageCount > 1 ){ ?>
+<div class="pagination">
+<div><!-- First page link --> <?php if (isset($this->previous)): ?> <a  class="sexybutton sexysimple"
+	href="<?php echo $this->url(array('page' => $this->first)); ?>">Start</a> | <?php else: ?>
+<span class="disabled sexybutton sexysimple">Start</span> | <?php endif; ?> <!-- Previous page link -->
+
+<?php if (isset($this->previous)): ?> <a  class="sexybutton sexysimple"
+	href="<?php echo $this->url(array('page' => $this->previous)); ?>">&lt;
+Previous</a> | <?php else: ?> <span class="disabled sexybutton sexysimple">&lt; Previous</span>
+| <?php endif; ?> <!-- Numbered page links --> <?php foreach ($this->pagesInRange as $page): ?>
+<?php if ($page != $this->current): ?> <a class="sexybutton sexysimple"
+	href="<?php echo $this->url(array('page' => $page)); ?>"><?php echo $page; ?></a> <?php else: ?>
+<span class="disabled sexybutton sexysimple"><?php echo $page; ?></span> <?php endif; ?> <?php endforeach; ?> <!-- Next page link -->
+<?php if (isset($this->next)): ?> | <a  class="sexybutton sexysimple"
+	href="<?php echo $this->url(array('page' => $this->next)); ?>">Next &gt;</a> |
+<?php else: ?> | <span class="disabled sexybutton sexysimple">Next &gt;</span> | <?php endif; ?>
+<!-- Last page link --> <?php if (isset($this->next)): ?> <a  class="sexybutton sexysimple"
+	href="<?php echo $this->url(array('page' => $this->last)); ?>">End</a> <?php else: ?>
+<span class="disabled sexybutton sexysimple">End</span> <?php endif; ?> &nbsp; Page <?php echo $this->current; ?>
+ of <?php echo $this->last; ?></div>
+</div>
+<?php } ?>
