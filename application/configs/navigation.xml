@@ -24,6 +24,14 @@
             <route>default</route>
             <resource>userpages</resource>
         </profile>
+        <users>
+            <label>Users</label>
+            <module>default</module>
+            <controller>users</controller>
+            <action>index</action>
+            <route>default</route>
+            <resource>userpages</resource>
+        </users>
         <registration>
             <label>Registration</label>
             <module>default</module>

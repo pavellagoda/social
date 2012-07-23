@@ -13,4 +13,26 @@
 class Model_Messages extends Model_Base_Messages
 {
 
+    public function getCountUnreadedMessages($user_id)
+    {
+
+        $q = Doctrine_Query::create()
+                ->from('Model_Messages m')
+                ->where('m.recepient_id = ?', $user_id)
+                ->andWhere('m.is_readed = ?', 0)
+        ;
+        return $q->count();
+    }
+
+    public function getMessagesForUser($user_id)
+    {
+
+        $q = Doctrine_Query::create()
+                ->from('Model_Messages m')
+                ->innerJoin('Model_Users as recepient on recepient.id = m.recepient_id')
+                ->where('m.recepient_id = ?', $user_id)
+        ;
+        return $q->execute();
+    }
+
 }

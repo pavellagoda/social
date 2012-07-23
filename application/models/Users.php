@@ -12,5 +12,11 @@
  */
 class Model_Users extends Model_Base_Users
 {
-
+    public function getRegistaredUser($current) {
+        $q = Doctrine_Query::create()
+                ->from('Model_Users user')
+                ->where('id !=?', $current);
+        return $q->execute();
+        
+    } 
 }

@@ -1,0 +1,9 @@
+<div>
+    <?php foreach ($this->messages as $message): ?>
+        <div>
+            <div class="lineelement username"><a href="/messages/view/id/<?php echo $message->id ?>"><?php echo $message->Users->username ?></a></div>
+            <div class="lineelement send-message"><?php echo substr($message->message, 0, 10) ?></div>
+            <div class="clear"></div>
+        </div>
+    <?php endforeach; ?>
+</div>

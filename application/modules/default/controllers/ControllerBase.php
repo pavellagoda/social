@@ -25,8 +25,10 @@ class modules_default_controllers_ControllerBase extends controllers_ControllerB
         $this->view->headLink()->appendStylesheet('/styles/reset.css');
         $this->view->headLink()->appendStylesheet('/styles/960.css');
         $this->view->headLink()->appendStylesheet('/styles/styles.css');
+        $this->view->headLink()->appendStylesheet('/styles/jquery.ui.all.css');
 
-        $this->view->headScript()->appendFile('/scripts/jquery-1.4.2.min.js');
+        $this->view->headScript()->appendFile('/scripts/jquery-1.7.2.min.js');
+        $this->view->headScript()->appendFile('/scripts/jquery-ui-1.8.21.custom.js');
         $this->view->headScript()->appendFile('/scripts/global.js');
         $this->view->headTitle()->setSeparator(' / ');
         $this->view->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=utf-8');
@@ -36,11 +38,14 @@ class modules_default_controllers_ControllerBase extends controllers_ControllerB
         $this->view->actionName = $frontController->getRequest()->getActionName();
 
         $this->view->headTitle()->setDefaultAttachOrder('PREPEND');
-        $this->view->headTitle()->append('My Remote Team');
+        $this->view->headTitle()->append('Art Social Network');
 
         $user = App_User::getLoggedUser();
-        if ($user)
-            $this->view->username = $user->username;
+        if ($user) {
+            $this->view->loggedUser = $user;
+            $model = new Model_Messages();
+            $this->view->unreadedMessages = $model->getCountUnreadedMessages($user->id);
+        }
     }
 
     protected function _initAcl() {

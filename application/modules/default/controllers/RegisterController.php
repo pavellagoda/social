@@ -2,8 +2,6 @@
 
 class RegisterController extends modules_default_controllers_ControllerBase {
 
-    public $_contentLayout = 'short';
-
     public function init() {
         /* Initialize action controller here */
         parent::init();

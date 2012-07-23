@@ -12,6 +12,9 @@ Doctrine_Manager::getInstance()->bindComponent('Model_Messages', 'doctrine');
  * @property integer $recepient_id
  * @property string $message
  * @property integer $is_readed
+ * @property timestamp $time
+ * @property Model_Users $Users
+ * @property Model_Users $Users_2
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -35,7 +38,8 @@ abstract class Model_Base_Messages extends Doctrine_Record
              'type' => 'integer',
              'fixed' => 0,
              'unsigned' => true,
-             'primary' => true,
+             'primary' => false,
+             'notnull' => true,
              'autoincrement' => false,
              'length' => '4',
              ));
@@ -43,7 +47,8 @@ abstract class Model_Base_Messages extends Doctrine_Record
              'type' => 'integer',
              'fixed' => 0,
              'unsigned' => true,
-             'primary' => true,
+             'primary' => false,
+             'notnull' => true,
              'autoincrement' => false,
              'length' => '4',
              ));
@@ -66,11 +71,26 @@ abstract class Model_Base_Messages extends Doctrine_Record
              'autoincrement' => false,
              'length' => '1',
              ));
+        $this->hasColumn('time', 'timestamp', 25, array(
+             'type' => 'timestamp',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => false,
+             'autoincrement' => false,
+             'length' => '25',
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasOne('Model_Users as Users', array(
+             'local' => 'sender_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Model_Users as Users_2', array(
+             'local' => 'recepient_id',
+             'foreign' => 'id'));
     }
 }

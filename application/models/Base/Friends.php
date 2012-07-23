@@ -9,6 +9,8 @@ Doctrine_Manager::getInstance()->bindComponent('Model_Friends', 'doctrine');
  * 
  * @property integer $user_id
  * @property integer $friend_id
+ * @property Model_Users $Users
+ * @property Model_Users $Users_2
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -41,6 +43,12 @@ abstract class Model_Base_Friends extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasOne('Model_Users as Users', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Model_Users as Users_2', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
     }
 }

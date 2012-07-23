@@ -14,6 +14,16 @@ Friends:
       unsigned: true
       primary: true
       autoincrement: false
+  relations:
+    Users:
+      local: user_id
+      foreign: id
+      type: one
+    Users_2:
+      class: Users
+      local: user_id
+      foreign: id
+      type: one
 Messages:
   connection: doctrine
   tableName: messages
@@ -28,13 +38,15 @@ Messages:
       type: integer(4)
       fixed: false
       unsigned: true
-      primary: true
+      primary: false
+      notnull: true
       autoincrement: false
     recepient_id:
       type: integer(4)
       fixed: false
       unsigned: true
-      primary: true
+      primary: false
+      notnull: true
       autoincrement: false
     message:
       type: string()
@@ -51,6 +63,23 @@ Messages:
       default: '0'
       notnull: false
       autoincrement: false
+    time:
+      type: timestamp(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Users:
+      local: sender_id
+      foreign: id
+      type: one
+    Users_2:
+      class: Users
+      local: recepient_id
+      foreign: id
+      type: one
 Users:
   connection: doctrine
   tableName: users
@@ -96,3 +125,22 @@ Users:
       primary: false
       notnull: false
       autoincrement: false
+  relations:
+    Friends:
+      local: id
+      foreign: user_id
+      type: many
+    Friends_2:
+      class: Friends
+      local: id
+      foreign: user_id
+      type: many
+    Messages:
+      local: id
+      foreign: sender_id
+      type: many
+    Messages_2:
+      class: Messages
+      local: id
+      foreign: recepient_id
+      type: many

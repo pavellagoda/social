@@ -14,7 +14,11 @@
             <div class="header">
                 <?php echo $this->render("includes/header.phtml"); ?>
             </div>
-
+            <?php if ($this->loggedUser): ?>
+                <div class="messages">
+                    <a href="/messages">Messages<?php if($this->unreadedMessages) echo '('.$this->unreadedMessages.')'?></a>
+                </div>
+            <?php endif; ?>
             <div class="container">
                 <?php echo $this->layout()->messages; ?>
                 <?php echo $this->layout()->content; ?>

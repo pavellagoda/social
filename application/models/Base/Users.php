@@ -13,6 +13,10 @@ Doctrine_Manager::getInstance()->bindComponent('Model_Users', 'doctrine');
  * @property string $password
  * @property string $fullname
  * @property timestamp $date
+ * @property Doctrine_Collection $Friends
+ * @property Doctrine_Collection $Friends_2
+ * @property Doctrine_Collection $Messages
+ * @property Doctrine_Collection $Messages_2
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -82,6 +86,20 @@ abstract class Model_Base_Users extends Doctrine_Record
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasMany('Model_Friends as Friends', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('Model_Friends as Friends_2', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('Model_Messages as Messages', array(
+             'local' => 'id',
+             'foreign' => 'sender_id'));
+
+        $this->hasMany('Model_Messages as Messages_2', array(
+             'local' => 'id',
+             'foreign' => 'recepient_id'));
     }
 }

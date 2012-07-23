@@ -1,0 +1,19 @@
+<div>
+    <?php foreach ($this->users as $user): ?>
+        <div>
+            <div class="lineelement username"><?php echo $user['username'] ?></div>
+            <div class="lineelement send-message"><a user="<?php echo $user['id'] ?>" href="#">Send Message</a></div>
+            <div class="clear"></div>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<div id="dialog">
+    <form action="/messages/send" method="post">
+        <div class="username"></div>
+        <input type="hidden" name="recepient" value="0"/>
+        <input type="hidden" name="sender" value="<?php echo $this->loggedUser->id ?>"/>
+        <textarea name="content"></textarea>
+        <button>Send</button>
+    </form>
+</div>
