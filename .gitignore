@@ -4,4 +4,4 @@
 /public/tmp/*
 error.log
 access.log
-
+/application/configs/application.ini

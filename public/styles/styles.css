@@ -1,0 +1,12 @@
+.lineelement {
+    display: inline;
+    float: left;
+}
+
+div.form-element {
+    margin: 10px 0;
+}
+
+div.form-element label {
+    width: 200px;
+}
