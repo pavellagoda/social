@@ -12,6 +12,7 @@
                     ->render($this->mainNavigation);
             ?>
             <div class="clear"></div>
+            <div class="pull-left username">Hi, <?php echo $this->loggedUser?$this->loggedUser->fullname:'Guest' ?>!</div>
         </div>
     </div>
 </div>

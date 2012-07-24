@@ -5,3 +5,7 @@
 .left-menu a {
     display: block;
 }
+
+.username {
+    padding: 9px 10px 11px;
+}
