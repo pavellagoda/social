@@ -22,13 +22,13 @@ class modules_default_controllers_ControllerBase extends controllers_ControllerB
 
         $this->view->headLink()->headLink(array('rel' => 'favicon',
             'href' => '/favicon.ico'), 'PREPEND');
-        $this->view->headLink()->appendStylesheet('/styles/styles.css');
+        $this->view->headLink()->appendStylesheet('/styles/styles.css?r='.  rand(1, 10000));
         $this->view->headLink()->appendStylesheet('/bootstrap/css/bootstrap.min.css');
         $this->view->headLink()->appendStylesheet('/bootstrap/css/bootstrap-responsive.min.css');
         $this->view->headLink()->appendStylesheet('/bootstrap/css/bootstrap-yii.css');
 
         $this->view->headScript()->appendFile('/scripts/jquery-1.7.2.min.js');
-        $this->view->headScript()->appendFile('/scripts/global.js');
+        $this->view->headScript()->appendFile('/scripts/global.js?r='.  rand(1, 10000));
         $this->view->headTitle()->setSeparator(' / ');
         $this->view->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=utf-8');
 
