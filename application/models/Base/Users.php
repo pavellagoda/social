@@ -15,8 +15,12 @@ Doctrine_Manager::getInstance()->bindComponent('Model_Users', 'doctrine');
  * @property timestamp $date
  * @property Doctrine_Collection $Friends
  * @property Doctrine_Collection $Friends_2
+ * @property Doctrine_Collection $Friends_3
+ * @property Doctrine_Collection $Friends_4
  * @property Doctrine_Collection $Messages
  * @property Doctrine_Collection $Messages_2
+ * @property Doctrine_Collection $Messages_3
+ * @property Doctrine_Collection $Messages_4
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -94,12 +98,28 @@ abstract class Model_Base_Users extends Doctrine_Record
              'local' => 'id',
              'foreign' => 'user_id'));
 
+        $this->hasMany('Model_Friends as Friends_3', array(
+             'local' => 'id',
+             'foreign' => 'friend_id'));
+
+        $this->hasMany('Model_Friends as Friends_4', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
         $this->hasMany('Model_Messages as Messages', array(
              'local' => 'id',
-             'foreign' => 'sender_id'));
+             'foreign' => 'recepient_id'));
 
         $this->hasMany('Model_Messages as Messages_2', array(
              'local' => 'id',
+             'foreign' => 'sender_id'));
+
+        $this->hasMany('Model_Messages as Messages_3', array(
+             'local' => 'id',
              'foreign' => 'recepient_id'));
+
+        $this->hasMany('Model_Messages as Messages_4', array(
+             'local' => 'id',
+             'foreign' => 'sender_id'));
     }
 }

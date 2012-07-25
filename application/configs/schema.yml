@@ -24,6 +24,16 @@ Friends:
       local: user_id
       foreign: id
       type: one
+    Users_3:
+      class: Users
+      local: friend_id
+      foreign: id
+      type: one
+    Users_4:
+      class: Users
+      local: user_id
+      foreign: id
+      type: one
 Messages:
   connection: doctrine
   tableName: messages
@@ -72,12 +82,22 @@ Messages:
       autoincrement: false
   relations:
     Users:
-      local: sender_id
+      local: recepient_id
       foreign: id
       type: one
     Users_2:
       class: Users
+      local: sender_id
+      foreign: id
+      type: one
+    Users_3:
+      class: Users
       local: recepient_id
+      foreign: id
+      type: one
+    Users_4:
+      class: Users
+      local: sender_id
       foreign: id
       type: one
 Users:
@@ -135,12 +155,32 @@ Users:
       local: id
       foreign: user_id
       type: many
+    Friends_3:
+      class: Friends
+      local: id
+      foreign: friend_id
+      type: many
+    Friends_4:
+      class: Friends
+      local: id
+      foreign: user_id
+      type: many
     Messages:
       local: id
-      foreign: sender_id
+      foreign: recepient_id
       type: many
     Messages_2:
       class: Messages
       local: id
+      foreign: sender_id
+      type: many
+    Messages_3:
+      class: Messages
+      local: id
       foreign: recepient_id
+      type: many
+    Messages_4:
+      class: Messages
+      local: id
+      foreign: sender_id
       type: many
