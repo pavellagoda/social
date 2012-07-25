@@ -15,8 +15,6 @@ Doctrine_Manager::getInstance()->bindComponent('Model_Messages', 'doctrine');
  * @property timestamp $time
  * @property Model_Users $Users
  * @property Model_Users $Users_2
- * @property Model_Users $Users_3
- * @property Model_Users $Users_4
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -88,19 +86,11 @@ abstract class Model_Base_Messages extends Doctrine_Record
     {
         parent::setUp();
         $this->hasOne('Model_Users as Users', array(
-             'local' => 'recepient_id',
+             'local' => 'sender_id',
              'foreign' => 'id'));
 
         $this->hasOne('Model_Users as Users_2', array(
-             'local' => 'sender_id',
-             'foreign' => 'id'));
-
-        $this->hasOne('Model_Users as Users_3', array(
              'local' => 'recepient_id',
-             'foreign' => 'id'));
-
-        $this->hasOne('Model_Users as Users_4', array(
-             'local' => 'sender_id',
              'foreign' => 'id'));
     }
 }
