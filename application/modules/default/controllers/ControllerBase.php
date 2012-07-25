@@ -41,7 +41,12 @@ class modules_default_controllers_ControllerBase extends controllers_ControllerB
 
         $user = App_User::getLoggedUser();
         if ($user) {
+            $friendsList = array();
             $this->view->loggedUser = $user;
+            foreach ($user->Friends_2 as $friend) {
+                $friendsList[] = $friend->friend_id;
+            }
+            $this->view->friendsList = $friendsList;
             $model = new Model_Messages();
             $this->view->unreadedMessages = $model->getCountUnreadedMessages($user->id);
         }

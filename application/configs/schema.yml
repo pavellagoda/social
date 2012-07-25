@@ -16,7 +16,7 @@ Friends:
       autoincrement: false
   relations:
     Users:
-      local: user_id
+      local: friend_id
       foreign: id
       type: one
     Users_2:
@@ -128,7 +128,7 @@ Users:
   relations:
     Friends:
       local: id
-      foreign: user_id
+      foreign: friend_id
       type: many
     Friends_2:
       class: Friends

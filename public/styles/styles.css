@@ -9,3 +9,7 @@
 .username {
     padding: 9px 10px 11px;
 }
+
+.send-message a {
+    display: block;
+}

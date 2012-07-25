@@ -88,7 +88,7 @@ abstract class Model_Base_Users extends Doctrine_Record
         parent::setUp();
         $this->hasMany('Model_Friends as Friends', array(
              'local' => 'id',
-             'foreign' => 'user_id'));
+             'foreign' => 'friend_id'));
 
         $this->hasMany('Model_Friends as Friends_2', array(
              'local' => 'id',

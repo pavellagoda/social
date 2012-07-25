@@ -1,6 +1,6 @@
 $(function(){
 	$('#dialog').modal({show:false});
-        $('.send-message a').click(function(){
+        $('.send-message a.send-message').click(function(){
             console.log($('#dialog'))
             $('#dialog').modal('show');
             $('#dialog .username').html($(this).parent().prev('.username').html())

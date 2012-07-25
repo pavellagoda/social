@@ -6,15 +6,15 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($this->users as $user): ?>
+        <?php foreach ($this->friends as $friend): ?>
             <tr>
-                <td class="username"><?php echo $user['username'] ?></td>
+                <td class="username"><?php echo $friend->Users->username ?></td>
                 <td class="send-message span3">
-                    <a class="send-message" user="<?php echo $user['id'] ?>" href="#">Send Message</a>
-                    <?php if(in_array($user['id'], $this->friendsList)): ?>
-                    <a href="/friends/remove/id/<?php echo $user['id'] ?>">Remove from Friends</a>
+                    <a class="send-message" user="<?php echo $friend->Users->id ?>" href="#">Send Message</a>
+                    <?php if(in_array($friend->Users->id, $this->friendsList)): ?>
+                    <a href="/friends/remove/id/<?php echo $friend->Users->id ?>">Remove from Friends</a>
                     <?php else: ?>
-                    <a href="/friends/add/id/<?php echo $user['id'] ?>">Add to Friends</a>
+                    <a href="/friends/add/id/<?php echo $friend->Users->id ?>">Add to Friends</a>
                     <?php endif; ?>
                 </td>
                 <td class="clear"></td>
