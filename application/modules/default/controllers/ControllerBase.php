@@ -10,7 +10,6 @@ class modules_default_controllers_ControllerBase extends controllers_ControllerB
     protected $_bForLoggedUsersOnly = false;
 
     public function init() {
-        $this->_initAcl();
         parent::init();
 
         if (!App_User::isLogged() && $this->_bForLoggedUsersOnly) {
