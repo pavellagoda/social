@@ -13,3 +13,12 @@
 .send-message a {
     display: block;
 }
+
+.description {
+    margin-top: 20px;
+}
+
+h4.secret {
+    padding-top:10px;
+    border-top: 1px dotted grey; 
+}
