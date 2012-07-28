@@ -34,6 +34,31 @@ Catalogues:
       local: firm_id
       foreign: id
       type: one
+Favorites:
+  connection: doctrine
+  tableName: favorites
+  columns:
+    user_id:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: true
+      autoincrement: false
+    firm_id:
+      type: integer(4)
+      fixed: false
+      unsigned: true
+      primary: true
+      autoincrement: false
+  relations:
+    Users:
+      local: user_id
+      foreign: id
+      type: one
+    Firms:
+      local: firm_id
+      foreign: id
+      type: one
 Firms:
   connection: doctrine
   tableName: firms
@@ -67,6 +92,10 @@ Firms:
       autoincrement: false
   relations:
     Catalogues:
+      local: id
+      foreign: firm_id
+      type: many
+    Favorites:
       local: id
       foreign: firm_id
       type: many
@@ -198,6 +227,10 @@ Users:
       notnull: false
       autoincrement: false
   relations:
+    Favorites:
+      local: id
+      foreign: user_id
+      type: many
     Friends:
       local: id
       foreign: user_id

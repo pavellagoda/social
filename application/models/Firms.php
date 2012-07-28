@@ -12,5 +12,12 @@
  */
 class Model_Firms extends Model_Base_Firms
 {
+    public function findByUserId($user_id) {
+        $q = Doctrine_Query::create()
+                ->from('Model_Firms as f')
+                ->innerJoin('f.Favorites favorites on favorites.firm_id=f.id');
 
+        $q->where('favorites.user_id = ?', $user_id);
+        return $q->execute();
+    }
 }

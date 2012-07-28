@@ -15,7 +15,8 @@ class modules_default_controllers_ControllerBase extends controllers_ControllerB
         if (!App_User::isLogged() && $this->_bForLoggedUsersOnly) {
             $this->_redirect('/login/');
         }
-
+        
+        $this->_initAcl();
 
         $oZendSession = Zend_Registry::getInstance()->get('Zend_Session_Namespace');
 

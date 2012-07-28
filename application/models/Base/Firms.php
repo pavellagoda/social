@@ -12,6 +12,7 @@ Doctrine_Manager::getInstance()->bindComponent('Model_Firms', 'doctrine');
  * @property string $main_description
  * @property string $secret_description
  * @property Doctrine_Collection $Catalogues
+ * @property Doctrine_Collection $Favorites
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -64,6 +65,10 @@ abstract class Model_Base_Firms extends Doctrine_Record
     {
         parent::setUp();
         $this->hasMany('Model_Catalogues as Catalogues', array(
+             'local' => 'id',
+             'foreign' => 'firm_id'));
+
+        $this->hasMany('Model_Favorites as Favorites', array(
              'local' => 'id',
              'foreign' => 'firm_id'));
     }

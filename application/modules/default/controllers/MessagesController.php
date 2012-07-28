@@ -30,7 +30,7 @@ class MessagesController extends modules_default_controllers_ControllerBase
         if(0==$id) {
             $this->_helper->_redirector('index');
         }
-        $message = Doctrine::getTable('Model_messages')->findOneById($id);
+        $message = Doctrine::getTable('Model_Messages')->findOneById($id);
         $message->is_readed = 1;
         $message->save();
         $this->view->message = $message;

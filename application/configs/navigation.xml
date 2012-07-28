@@ -32,6 +32,14 @@
             <route>default</route>
             <resource>userpages</resource>
         </users>
+        <firms>
+            <label>Firms</label>
+            <module>default</module>
+            <controller>firms</controller>
+            <action>index</action>
+            <route>default</route>
+            <resource>userpages</resource>
+        </firms>
         <registration>
             <label>Registration</label>
             <module>default</module>

@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Firm</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($this->firms as $firm): ?>
+            <tr>
+                <td class="username"><a href="/firms/view/id/<?php echo $firm->id ?>"><?php echo $firm->name; ?></a></td>
+                <td class="send-message span3">
+                    <?php if(in_array($firm->id, $this->firmList)): ?>
+                    <a href="/favorites/remove/id/<?php echo $firm->id ?>">Remove from Favorites</a>
+                    <?php else: ?>
+                    <a href="/favorites/add/id/<?php echo $firm->id ?>">Add to Favorites</a>
+                    <?php endif; ?>
+                </td>
+                <td class="clear"></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

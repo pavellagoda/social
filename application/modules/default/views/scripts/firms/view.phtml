@@ -1,0 +1,24 @@
+<div>
+    <h3><?php echo $this->firm->name ?></h3>
+
+    <?php if ($this->isFavourite): ?>
+        <a href="/favorites/remove/id/<?php echo $this->firm->id ?>">Remove from Favorites</a>
+    <?php else: ?>
+        <a href="/favorites/add/id/<?php echo $this->firm->id ?>">Add to Favorites</a>
+    <?php endif; ?>
+    <div class="description"><?php echo $this->firm->main_description; ?></div>
+
+    <h4 class="secret">Secret information</h4>
+    <div class="description"><?php echo $this->firm->secret_description; ?></div>
+
+    <?php if (count($this->firm->Catalogues)): ?>
+        <h4 class="secret">Catalogues:</h4>
+        <div class="description">
+            <?php foreach ($this->firm->Catalogues as $catalog): ?>
+                <div>
+                    <a target="_blank" href="/files/catalogues/<?php echo $catalog->id; ?>.pdf"><?php echo $catalog->name ?></a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
